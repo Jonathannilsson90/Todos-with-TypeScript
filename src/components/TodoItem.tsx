@@ -1,10 +1,11 @@
 interface ITodoItem {
     text: string;
+    onRemoveTodo: (event:React.MouseEvent) => void; 
 }
 
 
-const TodoItem = (props: ITodoItem) => {
-    return <li>{props.text}</li>
-};
+function TodoItem(props: ITodoItem) {
+    return <li onClick={props.onRemoveTodo}>{props.text}</li>;
+}
 
 export default TodoItem

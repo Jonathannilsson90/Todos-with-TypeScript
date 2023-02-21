@@ -5,7 +5,11 @@ interface ITodoItem {
 
 
 function TodoItem(props: ITodoItem) {
-    return <li onClick={props.onRemoveTodo}>{props.text}</li>;
+    return (
+    <li>{props.text}
+    <button onClick={props.onRemoveTodo}>Remove</button>
+    </li>
+ );
 }
 
 export default TodoItem

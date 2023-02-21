@@ -1,5 +1,5 @@
 import { useRef } from "react";
-
+import classes from './NewTodo.module.css'
 interface IAddTodo {
   onAddTodo: (text: string) => void;
 }
@@ -22,10 +22,10 @@ const NewTodo = (props: IAddTodo) => {
   };
 
   return (
-    <form onSubmit={submitHandler}>
-      <label htmlFor="text">Type Todo:</label>
-      <input type="text" id="text" ref={todoTextInputRef} />
-      <button>Add Todo</button>
+    <form className={classes.form} onSubmit={submitHandler}>
+      <label className={classes.text} htmlFor="text">Type Todo:</label>
+      <input type="text" id="text" className={classes.textfield} ref={todoTextInputRef} />
+      <button className={classes.button}>Add Todo</button>
     </form>
   );
 };

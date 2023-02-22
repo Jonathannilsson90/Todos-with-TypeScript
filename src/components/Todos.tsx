@@ -2,7 +2,7 @@ import Todo from "../models/todo";
 import TodoItem from "./TodoItem";
 interface ITodos {
   items: Todo[];
-  onRemoveTodo: (id: string) => void;
+  onRemoveTodo: (id: number) => void;
 }
 
 const Todos = (props: ITodos) => {

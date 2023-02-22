@@ -1,3 +1,5 @@
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
 interface ITodoItem {
     text: string;
     onRemoveTodo: (event:React.MouseEvent) => void; 
@@ -7,9 +9,9 @@ interface ITodoItem {
 function TodoItem(props: ITodoItem) {
     return (
     <li>{props.text}
-    <button onClick={props.onRemoveTodo}>Remove</button>
+    <FontAwesomeIcon onClick={props.onRemoveTodo} icon={faTrash} />
     </li>
  );
 }
 
-export default TodoItem
+export default TodoItem;

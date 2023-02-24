@@ -5,13 +5,11 @@ import Todo from "./models/todo";
 
 function App() {
   const [todos, setTodos] = useState<Todo[]>([]);
- const [isToggled, setIsToggled] = useState(false)
+  const [isStrikedThrough, setIsStrikedThrough] = useState(false);
   
- const todoHandler = () => {
-    setIsToggled(!isToggled)
-    
+  const handleClick = () => {
+    setIsStrikedThrough(!isStrikedThrough);
   }
-
   const addTodoHandler = (todoText: string) => {
     const newTodo = new Todo(todoText);
 
@@ -31,7 +29,8 @@ function App() {
     <div>
       <NewTodo onAddTodo={addTodoHandler} />
       <Todos
-      todoDone={todoHandler}
+      isStrikedThrough={isStrikedThrough}
+      todoDone={handleClick}
         items={todos}
         onRemoveTodo={removeTodoHandler}
       ></Todos>

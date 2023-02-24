@@ -7,6 +7,7 @@ interface ITodos {
   items: Todo[];
   onRemoveTodo: (id: number) => void;
   todoDone: (id:number) => void;
+  isStrikedThrough: boolean
 }
 
 const Todos = (props: ITodos) => {
@@ -14,6 +15,7 @@ const Todos = (props: ITodos) => {
     <ul className={classes.ul}>
       {props.items.map((item) => (
         <TodoItem
+        isStrikedThrough={props.isStrikedThrough}
           todoDone={props.todoDone.bind(null,item.id)}
           key={item.id}
           text={item.text}

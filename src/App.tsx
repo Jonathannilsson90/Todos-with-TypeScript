@@ -6,6 +6,16 @@ import Todo from "./models/todo";
 function App() {
   const [todos, setTodos] = useState<Todo[]>([]);
 
+  const handleToggleTodo = (id: number) => {
+    setTodos(
+      todos.map(todo =>
+        todo.id === id ? { ...todo, completed: !todo.completed } : todo
+      )
+    );
+  };
+
+
+  
   const addTodoHandler = (todoText: string) => {
     const newTodo = new Todo(todoText);
 
@@ -14,18 +24,22 @@ function App() {
     });
   };
 
+  
   const removeTodoHandler = (todoId: number) => {
     setTodos((currentTodos) => {
-      return currentTodos.filter(todo => todo.id !== todoId)
-    })
-  }
- 
+      return currentTodos.filter((todo) => todo.id !== todoId);
+    });
+  };
+
   return (
     <div>
       <NewTodo onAddTodo={addTodoHandler} />
-      <Todos items={todos} onRemoveTodo={removeTodoHandler}></Todos>
+      <Todos
+        toggler={handleToggleTodo}
+        items={todos}
+        onRemoveTodo={removeTodoHandler}
+      ></Todos>
     </div>
- 
   );
 }
 

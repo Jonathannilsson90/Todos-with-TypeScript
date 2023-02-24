@@ -1,17 +1,22 @@
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import classes from './TodoList.module.css'
+
 interface ITodoItem {
     text: string;
+    toggler: (event:React.MouseEvent) => void;
     onRemoveTodo: (event:React.MouseEvent) => void; 
 }
 
 
+
 function TodoItem(props: ITodoItem) {
     return (
-    <li>{props.text}
-    <FontAwesomeIcon onClick={props.onRemoveTodo} icon={faTrash} />
+    <li onClick={props.toggler} className={classes.li}>{props.text} 
+    <FontAwesomeIcon className={classes.icon} onClick={props.onRemoveTodo} icon={faTrash} />
     </li>
  );
 }
+
 
 export default TodoItem;

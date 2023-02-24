@@ -7,16 +7,17 @@ interface IAddTodo {
 const NewTodo = (props: IAddTodo) => {
   /// Initialize Refs to fetch data from the form
   const todoTextInputRef = useRef<HTMLInputElement>(null);
-
+  
   const submitHandler = (e: React.FormEvent) => {
     e.preventDefault();
 
     const inputText = todoTextInputRef.current!.value;
-
+    
     if (inputText.trim().length === 0) {
       /// Make errorhandler later.
       return;
     }
+    
 
     props.onAddTodo(inputText);
   };

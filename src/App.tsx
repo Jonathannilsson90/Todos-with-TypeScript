@@ -5,13 +5,29 @@ import Todo from "./models/todo";
 
 function App() {
   const [todos, setTodos] = useState<Todo[]>([]);
-  const [isStrikedThrough, setIsStrikedThrough] = useState(false);
 
-  const handleClick = () => {
-    setIsStrikedThrough(!isStrikedThrough);
-  };
+  const handleClick = (todoId: number) => {
+
+    setTodos
+    (
+      todos.map((task) => {
+        if (task.id === todoId) 
+        {
+          //Change text decotation to underline
+          if(task.isStrikedThrough === false){return { ...task, isStrikedThrough: true};}
+          else {return { ...task, isStrikedThrough: false };}   
+        } 
+        else 
+        {
+          return task;
+        }
+      })
+    )
+  }
+
+
   const addTodoHandler = (todoText: string) => {
-    const newTodo = new Todo(todoText,  isStrikedThrough);
+    const newTodo = new Todo(todoText, false);
 
     setTodos((currentTodos) => {
       return currentTodos.concat(newTodo);
@@ -28,7 +44,6 @@ function App() {
     <div>
       <NewTodo onAddTodo={addTodoHandler} />
       <Todos
-        isStrikedThrough={isStrikedThrough}
         todoDone={handleClick}
         items={todos}
         onRemoveTodo={removeTodoHandler}

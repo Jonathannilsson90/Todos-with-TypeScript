@@ -11,9 +11,10 @@ interface ITodoItem {
 
 function TodoItem(props: ITodoItem) {
     return (
+    <>
     <li onClick={props.todoDone}  style={{ textDecoration: props.isStrikedThrough ? 'line-through' : 'none' }}  className={classes.li}>{props.text}
-    <FontAwesomeIcon className={classes.icon} onClick={props.onRemoveTodo} icon={faTrash} />
-    </li>
+    </li><FontAwesomeIcon className={classes.icon} onClick={props.onRemoveTodo} icon={faTrash} />
+    </>
  );
 }
 

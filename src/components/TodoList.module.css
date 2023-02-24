@@ -11,5 +11,6 @@
 
 .icon{
   display: grid;
-  justify-self: end;
+  justify-self: start;
+  height: 40px;
 }

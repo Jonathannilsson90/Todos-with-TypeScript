@@ -19,6 +19,7 @@ const NewTodo = (props: IAddTodo) => {
     }
 
     props.onAddTodo(inputText);
+    todoTextInputRef.current!.value = '';
   };
 
   return (

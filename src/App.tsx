@@ -6,19 +6,18 @@ import Todo from "./models/todo";
 function App() {
   const [todos, setTodos] = useState<Todo[]>([]);
   const [isStrikedThrough, setIsStrikedThrough] = useState(false);
-  
+
   const handleClick = () => {
     setIsStrikedThrough(!isStrikedThrough);
-  }
+  };
   const addTodoHandler = (todoText: string) => {
-    const newTodo = new Todo(todoText);
+    const newTodo = new Todo(todoText,  isStrikedThrough);
 
     setTodos((currentTodos) => {
       return currentTodos.concat(newTodo);
     });
   };
 
-  
   const removeTodoHandler = (todoId: number) => {
     setTodos((currentTodos) => {
       return currentTodos.filter((todo) => todo.id !== todoId);
@@ -29,8 +28,8 @@ function App() {
     <div>
       <NewTodo onAddTodo={addTodoHandler} />
       <Todos
-      isStrikedThrough={isStrikedThrough}
-      todoDone={handleClick}
+        isStrikedThrough={isStrikedThrough}
+        todoDone={handleClick}
         items={todos}
         onRemoveTodo={removeTodoHandler}
       ></Todos>

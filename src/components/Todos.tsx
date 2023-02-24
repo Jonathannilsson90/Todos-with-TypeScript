@@ -6,7 +6,7 @@ import classes from "./Todos.module.css";
 interface ITodos {
   items: Todo[];
   onRemoveTodo: (id: number) => void;
-  toggler: (id: number) => void;
+  todoDone: (id:number) => void;
 }
 
 const Todos = (props: ITodos) => {
@@ -14,7 +14,7 @@ const Todos = (props: ITodos) => {
     <ul className={classes.ul}>
       {props.items.map((item) => (
         <TodoItem
-          toggler={props.toggler.bind(null, item.id)}
+          todoDone={props.todoDone.bind(null,item.id)}
           key={item.id}
           text={item.text}
           onRemoveTodo={props.onRemoveTodo.bind(null, item.id)}

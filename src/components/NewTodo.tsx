@@ -17,7 +17,6 @@ const NewTodo = (props: IAddTodo) => {
       /// Make errorhandler later.
       return;
     }
-    
 
     props.onAddTodo(inputText);
   };

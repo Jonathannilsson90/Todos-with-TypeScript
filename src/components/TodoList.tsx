@@ -4,7 +4,7 @@ import classes from './TodoList.module.css'
 
 interface ITodoItem {
     text: string;
-    toggler: (event:React.MouseEvent) => void;
+    todoDone: (event:React.MouseEvent) => void;
     onRemoveTodo: (event:React.MouseEvent) => void; 
 }
 
@@ -12,7 +12,7 @@ interface ITodoItem {
 
 function TodoItem(props: ITodoItem) {
     return (
-    <li onClick={props.toggler} className={classes.li}>{props.text} 
+    <li onClick={props.todoDone} className={classes.li}>{props.text}
     <FontAwesomeIcon className={classes.icon} onClick={props.onRemoveTodo} icon={faTrash} />
     </li>
  );

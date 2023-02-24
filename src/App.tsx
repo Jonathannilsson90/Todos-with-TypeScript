@@ -5,17 +5,13 @@ import Todo from "./models/todo";
 
 function App() {
   const [todos, setTodos] = useState<Todo[]>([]);
-
-  const handleToggleTodo = (id: number) => {
-    setTodos(
-      todos.map(todo =>
-        todo.id === id ? { ...todo, completed: !todo.completed } : todo
-      )
-    );
-  };
-
-
+ const [isToggled, setIsToggled] = useState(false)
   
+ const todoHandler = () => {
+    setIsToggled(!isToggled)
+    
+  }
+
   const addTodoHandler = (todoText: string) => {
     const newTodo = new Todo(todoText);
 
@@ -35,7 +31,7 @@ function App() {
     <div>
       <NewTodo onAddTodo={addTodoHandler} />
       <Todos
-        toggler={handleToggleTodo}
+      todoDone={todoHandler}
         items={todos}
         onRemoveTodo={removeTodoHandler}
       ></Todos>

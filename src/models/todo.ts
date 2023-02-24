@@ -1,12 +1,11 @@
 class Todo {
     id: number;
     text: string;
-    completed: boolean
 
-    constructor(todoText: string, completed: boolean) {
+    constructor(todoText: string) {
         this.text = todoText
         this.id = Math.random()
-       this.completed = completed
+    
     }
 }
 export default Todo;

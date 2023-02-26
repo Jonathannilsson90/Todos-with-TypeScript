@@ -1,6 +1,7 @@
-.li {
+ .li {
   display: grid;
-  justify-self: center;
+  grid-template-columns: 1fr auto; 
+  align-items: center;
   list-style: none;
   margin: 1rem 0;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
@@ -9,10 +10,10 @@
   width: 750px;
 }
 
+
 .icon {
-  display: grid;
-  justify-self: start;
-  justify-content: center;
   height: 40px;
+  margin-left: 20px;
   margin-top: 30px;
+  grid-column: 2; 
 }

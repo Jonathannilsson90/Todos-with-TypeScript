@@ -5,16 +5,16 @@
    font-family:  var(--text);;
     display: grid;
     justify-content: center;
-    font-size: 25px;
+    font-size: 200%;
 }
 
 .textfield{
 font-family:  var(--text);;
-margin: 10px;
+margin: 1%;
 display:grid;
 justify-self: center;
-height: 20px;
-width: 700px;
+height: 40%;
+width: 40%;
 }
 .form {
     font-family:  var(--text);;

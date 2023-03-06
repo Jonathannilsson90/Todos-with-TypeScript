@@ -1,6 +1,9 @@
 .ul {
   display: flex;
+  justify-content: center;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+  justify-items: center;
+flex-basis: 50%;
 }

@@ -11,16 +11,16 @@ function App() {
 
     setTodos
     (
-      todos.map((task) => {
-        if (task.id === todoId) 
+      todos.map((item) => {
+        if (item.id === todoId) 
         {
-          //Change text decotation to underline
-          if(task.isStrikedThrough === false){return { ...task, isStrikedThrough: true};}
-          else {return { ...task, isStrikedThrough: false };}   
+          //Change text decoration to underline
+          if(item.isStrikedThrough === false){return { ...item, isStrikedThrough: true};}
+          else {return { ...item, isStrikedThrough: false };}   
         } 
         else 
         {
-          return task;
+          return item;
         }
       })
     )

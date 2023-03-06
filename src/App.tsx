@@ -2,6 +2,7 @@ import { useState } from "react";
 import NewTodo from "./components/NewTodo";
 import Todos from "./components/Todos";
 import Todo from "./models/todo";
+import classes from './App.module.css'
 
 function App() {
   const [todos, setTodos] = useState<Todo[]>([]);
@@ -41,7 +42,7 @@ function App() {
   };
 
   return (
-    <div>
+    <div className={classes.div}>
       <NewTodo onAddTodo={addTodoHandler} />
       <Todos
         todoDone={handleClick}

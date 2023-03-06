@@ -1,3 +1,18 @@
+# Todo list in React with TypeScript
+Solo project where we were tasked to do a todo list with the instructions of being able to add, remove and mark a certain todo as "done".
+
+---
+## Purpose of this project
+
+In this project we were challanged to learn a new framework (React) and also a superset of Javascript - Typescript.
+
+The real challange was to combine both in a readable and reuseable code components in react as well as acknowledge how powerful a framework can be in a large scale project.
+<br>
+<br>
+
+![Todo,showcase](/public/img/Todostriked.PNG)
+
+---
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

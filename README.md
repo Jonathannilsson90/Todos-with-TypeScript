@@ -10,7 +10,7 @@ The real challange was to combine both in a readable and reuseable code componen
 <br>
 <br>
 
-![Todo,showcase](/public/img/Todostriked.PNG)
+![Todo,showcase](/public/img/todoupdated.PNG)
 
 ---
 # Getting Started with Create React App

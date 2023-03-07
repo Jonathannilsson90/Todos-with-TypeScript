@@ -4,7 +4,7 @@ interface IAddTodo {
   onAddTodo: (text: string) => void;
 }
 
-const NewTodo = (props: IAddTodo) => {
+const NewTodo = ({onAddTodo}:IAddTodo) => {
   /// Initialize Refs to fetch data from the form
   const todoTextInputRef = useRef<HTMLInputElement>(null);
 
@@ -14,11 +14,11 @@ const NewTodo = (props: IAddTodo) => {
     const inputText = todoTextInputRef.current!.value;
 
     if (inputText.trim().length === 0) {
-      /// Make errorhandler later.
+      /// Avoid blank Todos.
       return;
     }
 
-    props.onAddTodo(inputText);
+    onAddTodo(inputText);
     todoTextInputRef.current!.value = "";
   };
 

@@ -11,19 +11,19 @@ interface ITodoItem {
   }
 
 
-function TodoItem(props: ITodoItem) {
+function TodoItem({text,id,todoDone,onRemoveTodo,isStrikedThrough}: ITodoItem) {
     const handleRemoveClick = (event: React.MouseEvent) => {
         event.stopPropagation();
-        props.onRemoveTodo(props.id);
+        onRemoveTodo(id);
       };
     
     
     return (
       <li 
-        onClick={() => props.todoDone(props.id)}  
-        style={{ textDecoration: props.isStrikedThrough ? 'line-through' : 'none' }}  
+        onClick={() => todoDone(id)}  
+        style={{ textDecoration: isStrikedThrough ? 'line-through' : 'none' }}  
         className={classes.li}>
-        {props.text}
+        {text}
         <FontAwesomeIcon className={classes.icon} onClick={handleRemoveClick} icon={faTrash} />
       </li>
     );

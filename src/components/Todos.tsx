@@ -11,17 +11,17 @@ interface ITodos {
 }
 
 
-const Todos = (props: ITodos) => {
+const Todos = ({items, onRemoveTodo, todoDone}: ITodos) => {
   return (
     <ul className={classes.ul}>
-      {props.items.map((item) => (
+      {items.map((item) => (
         <TodoItem
           key={item.id}
           id={item.id}
           text={item.text}
           isStrikedThrough={item.isStrikedThrough}
-          todoDone={props.todoDone}
-          onRemoveTodo={props.onRemoveTodo}
+          todoDone={todoDone}
+          onRemoveTodo={onRemoveTodo}
         />
       ))}
     </ul>

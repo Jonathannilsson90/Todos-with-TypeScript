@@ -27,11 +27,11 @@ function App() {
   }
 
 
-  const addTodoHandler = (todoText: string) => {
-    const newTodo = new Todo(todoText, false);
+  const addTodoHandler = (text: string) => {
+    const newTodo = new Todo( text, false);
 
     setTodos((currentTodos) => {
-      return currentTodos.concat(newTodo);
+      return [...currentTodos, newTodo];
     });
   };
 

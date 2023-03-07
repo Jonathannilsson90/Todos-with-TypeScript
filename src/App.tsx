@@ -47,8 +47,7 @@ function App() {
       <Todos
         todoDone={handleClick}
         items={todos}
-        onRemoveTodo={removeTodoHandler}
-      ></Todos>
+        onRemoveTodo={removeTodoHandler}></Todos>
     </div>
   );
 }

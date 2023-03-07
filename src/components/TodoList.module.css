@@ -11,12 +11,13 @@
   margin: 1rem 0;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
   padding: 1rem;
-  background-color: #f7f5ef;
+  background-color: white;
   width: 40%;
   flex-basis: 50%;
 }
 
 .icon {
+  background-color: white;
   height: 40px;
   margin-left: 20px;
   margin-top: 30px;

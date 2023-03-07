@@ -25,16 +25,16 @@ const NewTodo = ({onAddTodo}:IAddTodo) => {
   return (
     <form className={classes.form} onSubmit={submitHandler}>
       <label className={classes.text} htmlFor="text">
-        Todo List:
+        Add Todos to the list!
       </label>
       <input
-      placeholder="Type Todo here..."
+      placeholder="Todo:"
         type="text"
         id="text"
         className={classes.textfield}
         ref={todoTextInputRef}
       />
-      <button className={classes.button}>Add Todo</button>
+      <button className={classes.button}>ADD</button>
     </form>
   );
 };

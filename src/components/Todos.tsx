@@ -9,7 +9,7 @@ interface ITodos {
   todoDone: (id:number) => void;
 
 }
-
+/// comment
 
 const Todos = ({items, onRemoveTodo, todoDone}: ITodos) => {
   return (

@@ -1,7 +1,7 @@
 
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
-import classes from './TodoList.module.css'
+import classes from './css/TodoList.module.css'
 interface ITodoItem {
     text: string;
     id: number;

@@ -1,7 +1,7 @@
 import Todo from "../models/todo";
 import TodoItem from "./TodoList";
 
-import classes from "./Todos.module.css";
+import classes from "./css/NewTodo.module.css"
 
 interface ITodos {
   items: Todo[];

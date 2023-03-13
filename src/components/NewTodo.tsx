@@ -1,5 +1,5 @@
 import {useRef} from "react";
-import classes from "./NewTodo.module.css";
+import classes from './css/NewTodo.module.css'
 interface IAddTodo {
   onAddTodo: (text: string) => void;
 }
